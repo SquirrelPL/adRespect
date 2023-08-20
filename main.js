@@ -45,6 +45,31 @@ window.onload = () => {
       });
       aboutObserver.observe(document.querySelector('.aboutTextSection'));
 
+      const galleyObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const imgWhiteBlock = entry.target.querySelectorAll('.imgWhiteBlock');
+            const macyImg = entry.target.querySelectorAll('.macy-img');
+            let i = 0
+          if (entry.isIntersecting) {
+            let loop = () => {
+                setTimeout(() => {    
+                    imgWhiteBlock[i].classList.add('takePicture')
+                    macyImg[i].classList.remove('grayscale')
+                    i++;  
+                    if (i < imgWhiteBlock.length) {
+                        loop();              
+                    }
+                  }, 200)
+            }
+            loop()
+            
+            return; 
+          }
+          
+        });
+      });
+      galleyObserver.observe(document.querySelector('.macyGallery'));
+
       var macyInstance = Macy({
         // Opcje grid'u do galleri
         container: '.grid-macy',

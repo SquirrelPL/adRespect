@@ -1205,12 +1205,13 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.opacity-10 {
-  opacity: 0.1;
-}
-
 .opacity-50 {
   opacity: 0.5;
+}
+
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -1456,6 +1457,28 @@ body{
 
 .bgSlide{
   background-image: url('');
+}
+
+.grid-macy-item > div{
+  opacity: 0.1;
+}
+
+.takePicture{
+  animation: takePictureAnim .5s forwards;
+}
+
+@keyframes takePictureAnim {
+  0% {
+    opacity: 0.1;
+  }
+
+  20%{
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
 }
 
 @media only screen and (max-width: 1023px) {

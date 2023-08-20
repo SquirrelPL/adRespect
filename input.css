@@ -255,6 +255,26 @@ body{
     background-image: url('');
 }
 
+.grid-macy-item > div{
+    opacity: 0.1;
+}
+
+.takePicture{
+    animation: takePictureAnim .5s forwards;
+}
+
+@keyframes takePictureAnim {
+	0% {
+        opacity: 0.1;
+	}
+    20%{
+        opacity: 1;
+    }
+	100% {
+        opacity: 0.1;
+	}
+}
+
 @media only screen and (max-width: 1023px) {
     #navSearchBarContainer {
         box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.3);
