@@ -88,11 +88,12 @@ window.onload = () => {
 
 //funkcja umożliwiająca przewijanie karuzeli (slidera)
 function carouselScroll(){
+
     if(this.id == 'leftCarouselScrollButton'){
-        document.getElementById("slider").scrollLeft -= window.innerWidth/2
+        document.getElementById("slider").scrollLeft -= window.innerWidth/2 + 100
         return
     }
-    document.getElementById("slider").scrollLeft += window.innerWidth/2
+    document.getElementById("slider").scrollLeft += window.innerWidth/2+ 100
 }
 
 //funkcja jest odpowiedzialna za rozsuwanie wyszukiwarki wykorzystując do tego klasy css'a
