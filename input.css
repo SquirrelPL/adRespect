@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    @variants responsive {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    }
+  }
+
+body{
+    font-family: 'Inter', sans-serif;
+
+}
+
+
+
+.fontMontserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+.fontInter{
+    font-family: 'Inter', sans-serif;
+}
+
+:root{
+    --navBarHeight: 9vh;
+}
+
+.navBarHeight{
+    height: var(--navBarHeight);
+}
+
+.fullHeight{
+    height: calc(100vh - var(--navBarHeight));
+}
+.fullHeight-max{
+    max-height: calc(100vh - var(--navBarHeight));
+}
+
+.navHeightMargin{
+    height: calc(100vh);
+    top: calc(var(--navBarHeight) - 1px);
+}
+
+.navSearchBarContainer{
+    box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    transition: all 1s ease;
+}
+
+.offerDropdownShadow{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.249);
+}
+
+
+#navSearchBarContainer{
+
+    transition: all 1s ease;
+}
+
+#navSearchBarContainer:hover{
+    cursor: pointer;
+}
+
+
+.navSearchBar{
+    width: 0;
+    transition: width 1s ease;
+    border: 0;
+    outline: 0;
+}
+
+.navSearchBar:focus{
+    border: 0;
+    outline: 0;
+}
+
+.animNavSearchBar{
+    width: 150px;
+    transition: width 1s ease;
+}
+
+.hamburgetOutOfView{
+    right: 0vw;
+    transition: right 0.5s ease;
+}
+
+.hamburgetInView{
+    right: 0;
+    transition: right 0.5s ease;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.offerDropdownElement{
+    height: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 0;
+    transition-property: height, padding;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+
+.unfoldDropdown{
+    height: 30px;
+    color: black;
+    padding: 5px 15px;
+    font-size: 14px;
+    transition-property: height, padding;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+.inherit-padding{
+    padding: inherit;
+}
+
+@keyframes wipe-enter-from-left {
+	0% {
+        transform: translateX(-50px);
+        opacity: 0;
+	}
+	100% {
+        transform: translateX(0px);
+        opacity: 1;
+	}
+}
+
+.offerTitle{
+    opacity: 0;
+}
+
+.offerText{
+    opacity: 0;
+}
+
+.wipeEnter-animate{
+    animation: wipe-enter-from-left 1s forwards;
+}
+
+.wipeEnter-animate-delay-1{
+    animation: wipe-enter-from-left 1s forwards;
+    animation-delay: .2s;
+}
+
+.wipeEnter-animate-delay-2{
+    animation: wipe-enter-from-left 1s forwards;
+    animation-delay: .4s;
+}
+
+@keyframes wipe-enter-from-right {
+	0% {
+        transform: translateX(50px);
+        opacity: 0;
+	}
+	100% {
+        transform: translateX(0px);
+        opacity: 1;
+	}
+}
+
+.aboutTitle{
+    opacity: 0;
+}
+
+.aboutText{
+    opacity: 0;
+}
+
+.aboutButton{
+    opacity: 0;
+}
+
+.wipeEnter-animate-right{
+    animation: wipe-enter-from-right 1s forwards;
+}
+
+.wipeEnter-animate-delay-right-1{
+    animation: wipe-enter-from-right 1s forwards;
+    animation-delay: .2s;
+}
+
+.wipeEnter-animate-delay-right-2{
+    animation: wipe-enter-from-right 1s forwards;
+    animation-delay: .4s;
+}
+
+.wipeEnter-animate-delay-right-3{
+    animation: wipe-enter-from-right 1s forwards;
+    animation-delay: .6s;
+}
+
+.offerCard{
+    outline: solid;
+    outline-color: #1B5B31;
+    outline-width: 0px;
+    outline-offset: 0px;
+    
+
+    transition: all .2s ease;
+}
+
+.offerCard:hover{
+    animation: pulse-offerCard-animate .5s forwards;
+
+    cursor: pointer;
+}
+
+
+
+
+@keyframes pulse-offerCard-animate {
+	0% {
+        outline: solid;
+        outline-color: #1B5B31;
+        outline-width: 0px;
+        outline-offset: 0px;
+	}
+    50%{
+        outline-offset: 20px;
+        outline-width: 2px;
+        
+    }
+    60%{
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+    }
+	100% {
+        outline-offset: 10px;
+        outline-width: 1px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.bgAboutImage{
+    background-image: url('');
+}
+
+.bgSlide{
+    background-image: url('');
+}
+
+@media only screen and (max-width: 1023px) {
+    #navSearchBarContainer {
+        box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 100px;
+        transition: all 1s ease;
+    }
+    .navSearchBar{
+        width: 100%;
+        transition: width 1s ease;
+    }
+    .hamburgetOutOfView{
+        right: -60vw;
+    }
+    .offerDropdownShadow{
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.249);
+    }
+    .offerDropdownElement{
+        padding: 0;
+    }
+    .offerDropdownElement > a{
+        align-items: end;
+    }
+    .bgAboutImage{
+        background-image: url('./assets/Photo2.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bgSlide{
+        background-image: url('./assets/Photo.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

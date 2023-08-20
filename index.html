@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>giarddesign</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Inter:wght@400;500;700&family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+</head>
+<body class="p-0 m-0 min-h-[100vh]">
+    <nav class="w-full navBarHeight bg-white text-black px-[6vw] flex justify-between items-center overflow-x-clip relative z-[30]">
+        <div>
+            <img src="./assets/giarddesign.svg" alt="giarddesign logo"/>
+        </div>
+        <!--Nawigacja-->
+        <div id="nav" class="navHeightMargin hamburgetOutOfView flex lg:items-center lg:relative absolute right-0 lg:top-0 flex-col lg:flex-row bg-white lg:bg-transparent w-[60vw] lg:w-fit px-[6vw] lg:p-0 items-end">
+            <div class="lg:items-start my-3 lg:inline-block flex justify-end flex-col items-end">
+                <button id="offerButton" class="flex items-center">
+                    Oferta 
+                    <img class="ml-[0.5em]" src="./assets/arrow.svg" alt="dropdown arrow"/>
+                </button>
+                <ul class="flex flex-col lg:block lg:absolute text-right justify-end items-end lg:text-left z-10">
+                    <li class="offerDropdownElement offerDropdownShadow items-center bg-white rounded-tr-md rounded-tl-md"><a href="">zakładka nr.1</a></li>
+                    <li class="offerDropdownElement offerDropdownShadow items-center bg-white "><a href="">zakładka nr.2</a></li>
+                    <li class="offerDropdownElement offerDropdownShadow items-center bg-white "><a href="">zakładka nr.3</a></li>
+                    <li class="offerDropdownElement offerDropdownShadow items-center bg-white rounded-br-md rounded-bl-md"><a href="">zakładka nr.4</a></li>
+                </ul>
+            </div>
+            <button class="lg:ml-[48px] ml-0 my-3">O firmie</button>
+            <button class="lg:ml-[48px] ml-0 my-3">Realizacja</button>
+            <button class="lg:ml-[48px] ml-0 my-3">Kontakt</button>
+            <div id="navSearchBarContainer" class="lg:ml-[48px] ml-0 flex justify-end px-3 py-1 my-3">
+                <input id="navSearchBar" class="navSearchBar w-full" type="text" placeholder="Search">
+                    <img id="navSearchBarIcon" class="" src="./assets/Icon Color.svg" alt="search icon"/>
+                </input>
+            </div>
+        </div>
+        <div id="hamburger" class="flex items-center lg:hidden hover:cursor-pointer">
+            <div class="w-fit h-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <!--Sekcja intro-->
+    <section id="intro" class="fullHeight w-full flex">
+        <!--Karuzela (slider)-->
+            <ul id="slider" class="fullHeight w-full whitespace-nowrap bg-[#E0C7B3] inline-block overflow-y-hidden no-scrollbar scroll-smooth snap-mandatory snap-x">
+                <!--Slide #1-->
+                <li class="slide h-full w-full inline-block snap-center whitespace-normal bg-[#E0C7B3] bgSlide relative">
+                    <div class="bg-black h-full w-full opacity-50 absolute lg:hidden top-0 z-0"></div>
+                    <div class="h-full w-full flex items-start z-10">
+                        <div class=" w-full h-full pl-[6vw] flex items-left justify-center flex-col text-left z-10 lg:text-black text-white">
+                            <div class="h-fit">
+                                <h1 class="wipeEnter-animate leading-[40px] lg:leading-[70px] text-4xl lg:text-6xl font-medium fontMontserrat">
+                                    Nowoczesna<br> aranżacja<br> Twojego ogrodu 
+                                </h1>
+                            </div>
+                            <h2 class="wipeEnter-animate mt-10 text-base whitespace-normal break-words inline-block">
+                                Marka GiardDesign to wieloletnie doświadczenie i wysoka<br> estetyka realizacji. Oferujemy kompleksowy zakres usług<br> z indywidualnym podejściem do każdego projektu.
+                            </h2>
+                            <div class=" mt-[4em] flex flex-col lg:flex-row">
+                                <button class="w-fit px-[24px] pt-[12px] pb-[14px] text-white mr-[36px] bg-[#1B5B31] rounded-full">Skontaktuj się z nami</button>
+                                <button class="w-fit mt-5 whitespace-nowrap lg:mt-0 group px-[24px] pt-[12px] pb-[14px] bg-[#1B5B31] lg:bg-transparent text-white lg:text-[#1B5B31] rounded-full lg:border-[1px] border-solid border-0 lg:border-[#1B5B31] flex items-center">
+                                    Zobacz nasze realizacje
+                                    <svg class="fill-white lg:fill-[#1B5B31] ml-[0.5em] group-hover:animate-bounce" width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <img class="h-full hidden lg:block" src="./assets/Photo.webp"/>
+                    </div>
+                </li>
+                <!--Slide #2-->
+                <li class="slide h-full w-full inline-block snap-center whitespace-normal bg-[#E0C7B3] bgSlide relative">
+                    <div class="bg-black h-full w-full opacity-50 absolute lg:hidden top-0 z-0"></div>
+                    <div class="h-full w-full flex items-start z-10">
+                        <div class=" w-full h-full pl-[6vw] flex items-left justify-center flex-col text-left z-10 lg:text-black text-white">
+                            <div class="h-fit">
+                                <h1 class="wipeEnter-animate leading-[40px] lg:leading-[70px] text-4xl lg:text-6xl font-medium fontMontserrat">
+                                    Nowoczesna<br> aranżacja<br> Twojego ogrodu
+                                </h1>
+                            </div>
+                            <h2 class="wipeEnter-animate mt-10 text-base whitespace-normal break-words inline-block">
+                                Marka GiardDesign to wieloletnie doświadczenie i wysoka<br> estetyka realizacji. Oferujemy kompleksowy zakres usług<br> z indywidualnym podejściem do każdego projektu.
+                            </h2>
+                            <div class=" mt-[4em] flex flex-col lg:flex-row">
+                                <button class="w-fit px-[24px] pt-[12px] pb-[14px] text-white mr-[36px] bg-[#1B5B31] rounded-full">Skontaktuj się z nami</button>
+                                <button class="w-fit mt-5 whitespace-nowrap lg:mt-0 group px-[24px] pt-[12px] pb-[14px] bg-[#1B5B31] lg:bg-transparent text-white lg:text-[#1B5B31] rounded-full lg:border-[1px] border-solid border-0 lg:border-[#1B5B31] flex items-center">
+                                    Zobacz nasze realizacje
+                                    <svg class="fill-white lg:fill-[#1B5B31] ml-[0.5em] group-hover:animate-bounce" width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <img class="h-full hidden lg:block" src="./assets/Photo.webp"/>
+                    </div>
+                </li>
+                <!--Slide #3-->
+                <li class="slide h-full w-full inline-block snap-center whitespace-normal bg-[#E0C7B3] bgSlide relative">
+                    <div class="bg-black h-full w-full opacity-50 absolute lg:hidden top-0 z-0"></div>
+                    <div class="h-full w-full flex items-start z-10">
+                        <div class=" w-full h-full pl-[6vw] flex items-left justify-center flex-col text-left z-10 lg:text-black text-white">
+                            <div class="h-fit">
+                                <h1 class="wipeEnter-animate leading-[40px] lg:leading-[70px] text-4xl lg:text-6xl font-medium fontMontserrat">
+                                    Nowoczesna<br> aranżacja<br> Twojego ogrodu
+                                </h1>
+                            </div>
+                            <h2 class="wipeEnter-animate mt-10 text-base whitespace-normal break-words inline-block">
+                                Marka GiardDesign to wieloletnie doświadczenie i wysoka<br> estetyka realizacji. Oferujemy kompleksowy zakres usług<br> z indywidualnym podejściem do każdego projektu.
+                            </h2>
+                            <div class=" mt-[4em] flex flex-col lg:flex-row">
+                                <button class="w-fit px-[24px] pt-[12px] pb-[14px] text-white mr-[36px] bg-[#1B5B31] rounded-full">Skontaktuj się z nami</button>
+                                <button class="w-fit mt-5 whitespace-nowrap lg:mt-0 group px-[24px] pt-[12px] pb-[14px] bg-[#1B5B31] lg:bg-transparent text-white lg:text-[#1B5B31] rounded-full lg:border-[1px] border-solid border-0 lg:border-[#1B5B31] flex items-center">
+                                    Zobacz nasze realizacje
+                                    <svg class="fill-white lg:fill-[#1B5B31] ml-[0.5em] group-hover:animate-bounce" width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <img class="h-full hidden lg:block" src="./assets/Photo.webp"/>
+                    </div>
+                </li>
+            </ul>
+        <!--nawigacja po karuzeli-->
+        <div class="absolute bottom-0 right-0 bg-[#F5F0EC] flex z-20">
+            <button id="leftCarouselScrollButton" class="py-[24px] pl-[32px] pr-[16px] hover:cursor-pointer group">
+                <svg class="fill-black group-hover:fill-[#1B5B31]" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.7951 22.9393C10.2093 23.5251 10.2093 24.4749 10.7951 25.0607L20.3411 34.6066C20.9268 35.1924 21.8766 35.1924 22.4624 34.6066C23.0482 34.0208 23.0482 33.0711 22.4624 32.4853L13.9771 24L22.4624 15.5147C23.0482 14.9289 23.0482 13.9792 22.4624 13.3934C21.8766 12.8076 20.9268 12.8076 20.3411 13.3934L10.7951 22.9393ZM36.1442 22.5L11.8558 22.5L11.8558 25.5L36.1442 25.5L36.1442 22.5Z"/>
+                </svg>
+            </button>
+            <button id="rightCarouselScrollButton" class="py-[24px] pl-[32px] pr-[16px] rotate-180 hover:cursor-pointer group">
+                <svg class="fill-black group-hover:fill-[#1B5B31]" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.7951 22.9393C10.2093 23.5251 10.2093 24.4749 10.7951 25.0607L20.3411 34.6066C20.9268 35.1924 21.8766 35.1924 22.4624 34.6066C23.0482 34.0208 23.0482 33.0711 22.4624 32.4853L13.9771 24L22.4624 15.5147C23.0482 14.9289 23.0482 13.9792 22.4624 13.3934C21.8766 12.8076 20.9268 12.8076 20.3411 13.3934L10.7951 22.9393ZM36.1442 22.5L11.8558 22.5L11.8558 25.5L36.1442 25.5L36.1442 22.5Z"/>
+                </svg>                    
+            </button>
+        </div>
+    </section>
+
+    <!--Sekcja oferta-->
+    <section class=" min-h-[100vh] w-full bg-[#F5F0EC] pt-[120px] pb-[160px] px-[6vw]">
+        <div class="offerSectionText flex flex-col ml-[7vw]">
+            <h3 class="sectionTitle text-[#1B5B31] text-sm">Oferta</h3>
+            <span class="offerTitle font-medium text-3xl lg:text-5xl mt-4">Działamy <span class="fontMontserrat font-medium italic">kompleksowo</span></span>
+            <span class="offerText mt-[32px] text-base">
+                Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy nowoczesne ogrody<br>
+                przydomowe oraz rezydencjonalne. Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy<br> 
+                w życie, a na każdym etapie posłużymy radą i wieloletnim doświadczeniem. <br>
+            </span>
+        </div>
+        <div class="w-full flex flex-col justify-center lg:grid lg:grid-cols-3 h-fit gap-x-[4vw] mt-[96px] offerCards">
+            <!--Card #1-->
+            <div class="offerCard h-full mb-10 lg:mb-0 w-full bg-white rounded-3xl px-[40px] py-[48px] flex flex-col">
+                <img class="w-[2.5em] h-[2.5em]" src="./assets/pencilIcon.svg"/>
+                <div class="flex flex-col mt-[32px] mb-[60px]">
+                    <span class="fontMontserrat font-medium text-3xl">Projekty</span>
+                    <span class="mt-[12px]">Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.</span>
+                </div>
+                <a class=" flex flex-col w-fit h-fit hover:cursor-pointer mt-auto" href="#">
+                    <span class="flex text-[#1B5B31]">Dowiedz się więcej<img class="rotate-[270deg] ml-[0.5em]" src="./assets/ArrowDown.svg"/></span>
+                    <div class="w-full h-[1px] bg-[#1B5B31]"></div>
+                </a>  
+            </div>
+            <!--Card #2-->
+            <div class="offerCard h-full w-full mb-10 lg:mb-0 bg-white rounded-3xl px-[40px] py-[48px] flex flex-col">
+                <img class="w-[2.5em] h-[2.5em]" src="./assets/eyeIcon.svg"/>
+                <div class="flex flex-col mt-[32px] mb-[60px]">
+                    <span class="fontMontserrat font-medium text-3xl">Wizualizacje</span>
+                    <span class="mt-[12px] flex-wrap">Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii 3D.</span>
+                </div>
+                <a class=" flex flex-col w-fit h-fit hover:cursor-pointer mt-auto" href="#">
+                    <span class="flex text-[#1B5B31]">Dowiedz się więcej<img class="rotate-[270deg] ml-[0.5em]" src="./assets/ArrowDown.svg"/></span>
+                    <div class="w-full h-[1px] bg-[#1B5B31]"></div>
+                </a>  
+            </div>
+            <!--Card #3-->
+            <div class="offerCard h-full w-full bg-white rounded-3xl px-[40px] py-[48px] flex flex-col">
+                <img class="w-[2.5em] h-[2.5em]" src="./assets/starsIcon.svg"/>
+                <div class="flex flex-col mt-[32px] mb-[60px]">
+                    <span class="fontMontserrat font-medium text-3xl">Realizacje</span>
+                    <span class="mt-[12px]">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.</span>
+                </div>
+                <a class=" flex flex-col w-fit h-fit hover:cursor-pointer mt-auto" href="#">
+                    <span class="flex text-[#1B5B31]">Dowiedz się więcej<img class="rotate-[270deg] ml-[0.5em]" src="./assets/ArrowDown.svg"/></span>
+                    <div class="w-full h-[1px] bg-[#1B5B31]"></div>
+                </a>  
+            </div>
+        </div>
+    </section>
+
+    
+    <!--Sekcja o firmie-->
+    <section class="fullHeight lg:h-fit w-full bg-[#1B5B31] bgAboutImage flex relative lg:grid lg:grid-cols-2">
+        <img class="fullHeight-max hidden absolute lg:relative lg:w-auto lg:flex" src="./assets/Photo2.webp">
+            <div class="w-full h-full absolute bg-black opacity-50 lg:hidden"></div>
+        </img>
+        <div class="aboutTextSection h-full pr-[6vw] pl-[9vw] flex flex-col lg:justify-center justify-center text-white">
+            <h3 class="sectionTitle text-xs">O firmie</h3>
+            <span class="aboutTitle mt-4 text-3xl 2xl:text-5xl">Tworzymy <br>z pasją</span>
+            <span class="aboutText w-full h-fit mt-[30px] text-sm 2xl:text-base">
+                Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.
+            </span>
+            <button class="aboutButton mt-[72px] group px-[24px] pt-[12px] pb-[14px] text-white rounded-full w-fit border-[1px] border-solid border-white flex items-center">
+                Zobacz nasze realizacje
+                <svg class="fill-white ml-[0.5em]  rotate-[270deg]" width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!--Sekcja oferta-->
+    <section class="max-h-[200vh] w-full bg-[#DCC1AB] pt-[120px] pb-[20px] relative overflow-y-hidden">
+        <div class="flex flex-col ml-[5vw] px-[6vw]">
+            <h3 class="text-[#1B5B31] text-sm">Realizacje</h3>
+            <span class="fontMontserrat font-medium text-3xl lg:text-5xl mt-4">Nasze <span class="fontInter italic">projekty</span></span>
+        </div>
+        <div class="w-full mt-[96px] grid-macy h-fit">
+            <div class="grid-item"><img class="relative" src="./assets/img1.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img2.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img3.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img4.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img5.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img6.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img7.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img8.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img9.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img1.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img2.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+            <div class="grid-item"><img class="relative" src="./assets/img3.webp"><div class="absolute h-full w-full bg-white top-0 opacity-10"></div></img></div>
+        </div>
+        <button id="galleryShowButton" class="absolute bottom-24 left-1/2 transform -translate-x-1/2 h-fit z-10 w-fit mt-5 whitespace-nowrap lg:mt-0 group px-[24px] pt-[12px] pb-[14px] bg-transparent text-black rounded-full border-[1px] border-solid border-black flex items-center">
+            Rozwiń
+            <svg class="fill-black left-auto right-auto ml-[0.5em] group-hover:animate-bounce" width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z"/>
+            </svg>
+        </button>
+        <!--Dolny grdient-->
+        <div class="elementToDisable w-full absolute bottom-10 h-[60%] bg-gradient-to-t from-[#DCC1AB] to-transparent"></div>
+        <div class="elementToDisable w-full absolute bottom-0 h-11 bg-[#DCC1AB]"></div>
+            
+    </section>
+
+    <!--Sekcja kontakt-->
+    <section class="w-full h-fit bg-white py-[60px] px-[13vw]">
+        <div class="bg-[#1B5B31] h-full w-full py-[7.5vw] px-[7.3vw] text-white md:items-end justify-between flex flex-col md:flex-row items-start">
+            <span class="text-xl lg:text-4xl">Zostańmy w kontakcie!<br> Znajdziesz nas na <span class="fontMontserrat font-medium italic">Instagramie</span>.</span>
+            <div class="flex flex-col md:mt-0 mt-3">
+                <span>Śledź nasze<br> najnowsze realizacje!</span>
+                <button class="bg-white rounded-full text-[#1B5B31] w-fit px-[24px] pt-[10px] pb-[12px] mt-[24px]">Instagram</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-black text-white h-[61vh] px-[14vw] py-[10vh] w-full flex flex-col justify-between">
+        <div class="h-fit md:h-[20vh] flex flex-col justify-between">
+            <div class="flex justify-start items-start md:justify-between md:flex-row flex-col">
+                <img class="my-[16px] h-5" src="./assets/giarddesignWhite.svg" alt="giarddesign logo"/>
+                <div class="flex h-full justify-start md:justify-between md:w-fit w-full items-center flex-row">
+                    <span class="mr-[10px] text-xs lg:text-base">Daj znać, co możemy dla Ciebie zrobić!</span>
+                    <button class="px-[24px] text-xs lg:text-base pt-[12px] pb-[14px] rounded-full bg-[#1B5B31] w-fit">Skontaktuj się z nami</button>
+                </div>
+            </div>
+            <hr class="w-full my-[5vh]">
+            <div class="flex justify-between">
+                <div class="w-[50%]">
+                    <div class="">
+                        <a href="#" class="text-xs mr-[2vw]">Kontakt</a>
+                        <a href="#" class="text-xs mr-[2vw]">Instagram</a>
+                        <a href="#" class="text-xs mr-[2vw]">Facebook</a>
+                        <a href="#" class="text-xs">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="w-[50%] flex justify-end">
+                    <div class="flex justify-between md:flex-row flex-col items-end md:items-start">
+                        <span class="text-xs whitespace-nowrap">000-000-000</span>
+                        <span class="text-xs md:ml-[2vw]">giarddesign@kontakt.pl</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-between w-full md:flex-row flex-col">
+            <div>
+                <span class="text-sm md:text-base">Prawa zastrzeżone © 2022</span>
+            </div>      
+            <div class="flex items-center md:mt-0 mt-2">
+                <span class="mr-[0.5em] text-sm md:text-base">
+                    made by
+                </span>
+                <img src="./assets/logo-full-light.svg" alt="adRespect logo"/>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
