@@ -51,6 +51,7 @@ window.onload = () => {
             const macyImg = entry.target.querySelectorAll('.macy-img');
             let i = 0
           if (entry.isIntersecting) {
+            //pętla do animacji zdjęć w galleri
             let loop = () => {
                 setTimeout(() => {    
                     imgWhiteBlock[i].classList.add('takePicture')
@@ -135,6 +136,7 @@ function toggleOfferDropdown(){
         });
     }
 
+    //pętla do rozsuwania dropdownu po kolei lub chowania
     let loop = () => {
         setTimeout(() => {    
             offerElements[i].classList.toggle('unfoldDropdown')
