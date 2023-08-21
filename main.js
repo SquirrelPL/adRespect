@@ -10,30 +10,28 @@ window.onload = () => {
 
     document.getElementById("galleryShowButton").addEventListener('click', unfoldGallery)
 
+    //funkcja do przełączania widoku powiększania zdjęć
     let backDrop = document.getElementById("backDrop")
     let imgView = document.getElementById("imgView")
     document.querySelectorAll('.grid-macy-item').forEach(element => {
         element.addEventListener('click', () => {
-            backDrop.classList.toggle('hidden')
-            backDrop.classList.toggle('fixed')
-            backDrop.classList.toggle('overlayBackdrop')
-            imgView.classList.toggle('hidden')
-            imgView.classList.toggle('fixed')
-            imgView.classList.toggle('overlayPicture')
-            document.querySelector("body").classList.toggle("stop-scrolling");
+            toggleImgOverlayView()
             imgView.src = element.firstElementChild.src
         })
     });
 
-    backDrop.addEventListener('click', () => {
+    backDrop.addEventListener('click', () => {toggleImgOverlayView()})
+
+    //funkcja pomocnicza do przełączania widoku powiększania zdjęć (by zachować "DRY principle")
+    let toggleImgOverlayView = () => {
         backDrop.classList.toggle('hidden')
         backDrop.classList.toggle('fixed')
+        backDrop.classList.toggle('overlayBackdrop')
         imgView.classList.toggle('hidden')
         imgView.classList.toggle('fixed')
-        backDrop.classList.toggle('overlayBackdrop')
         imgView.classList.toggle('overlayPicture')
         document.querySelector("body").classList.toggle("stop-scrolling");
-    })
+    }
 
     //przy widoku na telefon ta funkcja umożliwia na zeskrolowanie do sekcji chowając jednocześnie nawigacje i odblokowując scrollowanie
     document.querySelectorAll('.navRedirectButton').forEach(element => {
