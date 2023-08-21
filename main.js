@@ -9,6 +9,14 @@ window.onload = () => {
     document.getElementById("rightCarouselScrollButton").addEventListener('click', carouselScroll)
 
     document.getElementById("galleryShowButton").addEventListener('click', unfoldGallery)
+
+    //przy widoku na telefon ta funkcja umożliwia na zeskrolowanie do sekcji chowając jednocześnie nawigacje i odblokowując scrollowanie
+    document.querySelectorAll('.navRedirectButton').forEach(element => {
+        element.addEventListener('click', () => {
+            hamburgerClicked()
+            document.getElementById(element.getAttribute("href").substring(1).toString()).scrollIntoView();
+        })
+    });
     
 
     const offerObserver = new IntersectionObserver(entries => {
@@ -107,14 +115,16 @@ function navSearchBarClicked(){
 
 //funkcja rozwija nawigazję po kliknięciu w hamburgera (tylko przy rozmiarze ekranu max 1024)
 function hamburgerClicked(){
-    let nav = document.getElementById("nav");
-    nav.classList.toggle("hamburgetOutOfView")
-    nav.classList.toggle("hamburgetInView")
-    if(!nav.classList.contains("hamburgetOutOfView")){
-        document.querySelector("body").classList.add("stop-scrolling");
-        return
+    if(window.innerWidth < 1024){
+        let nav = document.getElementById("nav");
+        nav.classList.toggle("hamburgetOutOfView")
+        nav.classList.toggle("hamburgetInView")
+        if(!nav.classList.contains("hamburgetOutOfView")){
+            document.querySelector("body").classList.add("stop-scrolling");
+            return
+        }
+        document.querySelector("body").classList.remove("stop-scrolling");
     }
-    document.querySelector("body").classList.remove("stop-scrolling");
 }
 
 //ta funkcja odpowiedzialna jest za rozwijanie i zwijanie dropdown'u
