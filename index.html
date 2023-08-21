@@ -227,18 +227,18 @@
             <span class="fontMontserrat font-medium text-3xl lg:text-5xl mt-4">Nasze <span class="fontInter italic">projekty</span></span>
         </div>
         <div class="macyGallery w-full mt-[96px] grid-macy h-fit">
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img1.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img2.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img3.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img4.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img5.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img6.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img7.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img8.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img9.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img1.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img2.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
-            <div class="grid-macy-item"><img class="macy-img relative grayscale" src="./assets/img3.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img1.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img2.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img3.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img4.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img5.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img6.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img7.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img8.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img9.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img1.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img2.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
+            <div class="grid-macy-item hover:cursor-pointer"><img class="macy-img relative grayscale" src="./assets/img3.webp"><div class="imgWhiteBlock absolute h-full w-full bg-white top-0"></div></img></div>
         </div>
         <button id="galleryShowButton" class="absolute bottom-24 left-1/2 transform -translate-x-1/2 h-fit z-10 w-fit mt-5 whitespace-nowrap lg:mt-0 group px-[24px] pt-[12px] pb-[14px] bg-transparent text-black rounded-full border-[1px] border-solid border-black flex items-center">
             Rozwiń
@@ -249,7 +249,10 @@
         <!--Dolny grdient-->
         <div class="elementToDisable w-full absolute bottom-10 h-[60%] bg-gradient-to-t from-[#DCC1AB] to-transparent"></div>
         <div class="elementToDisable w-full absolute bottom-0 h-11 bg-[#DCC1AB]"></div>
-            
+        
+        <!--Narzuta do powiększenia zdjęcia-->
+        <div id="backDrop" class=" bg-black hidden top-0 opacity-60 h-[100vh] w-[100vw]"></div>
+        <img id="imgView" class=" hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 outline outline-5 outline-[#1B5B31]" src="" alt="">
     </section>
 
     <!--Sekcja kontakt-->
